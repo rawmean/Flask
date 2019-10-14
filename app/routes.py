@@ -30,6 +30,6 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         # print(f'user rated range is {form.range.data}')
-        flash(f'Soc = {form.soc.data}, Rated Range = {form.range.data}')
+        flash('Soc = {}, Rated Range = {}'.format(form.soc.data, form.range.data))
         return redirect(url_for('index'))
     return render_template('login.html', title='Enter Data', form=form)
